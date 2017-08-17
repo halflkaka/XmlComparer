@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="XmlCompare.UseControl.Views.frmCmpFileListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <ToolBar x:Name="toolBar" Margin="0" Grid.Row="1" Height="30">
+            <ToggleButton  Width="Auto" Command="{Binding OKCommand}" CommandParameter="ContentRegion">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Okimage}" />
+                    <TextBlock Text="OK" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton  Width="Auto" Command="{Binding CancelCommand}" CommandParameter="ContentRegion">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Cancelimage}" />
+                    <TextBlock Text="Cancel" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ToggleButton>
+        </ToolBar>
+        <ContentControl prism:RegionManager.RegionName="pnlFileCompareListPanelRegion" Grid.Row="0" />    
+    </Grid>
+</UserControl>
