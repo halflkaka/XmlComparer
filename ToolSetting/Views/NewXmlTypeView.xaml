@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="XmlCompare.ToolSetting.Views.NewXmlTypeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Please input new Xml type name" Margin="10"  Grid.Row="0" Grid.Column="0"/>
+        <TextBox Width="600" Height="25" Grid.Row="0" Grid.Column="1" Margin="10" Name="XmlType" Text="{Binding XmlType}"/>
+        <Label Content="Please upload a sample to evaluate the nodes and attributes" Margin="10" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Width="600" Height="25" Grid.Row="1" Grid.Column="1" Margin="10" Text="{Binding SamplePath}" IsEnabled="{Binding SampleEnable}"/>
+        <Image Grid.Row="0" Grid.Column="2" Source="{Binding Checkimage}"/>
+        <Button   Grid.Row="1" Grid.Column="3" Width="90" Margin="10" Height="30" Command="{Binding UploadSampleCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Browseimage}" />
+                <TextBlock Text="Browse" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="3" Width="90" Margin="10" Height="30" Command="{Binding CheckCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Lightimage}" />
+                <TextBlock Text="Check" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button   Grid.Row="2" Grid.Column="3"  Margin="10" Command="{Binding OKCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Okimage}" />
+                <TextBlock Text="OK" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="10" HorizontalAlignment="Right" Command="{Binding CancelCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Cancelimage}" />
+                <TextBlock Text="Cancel" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>
