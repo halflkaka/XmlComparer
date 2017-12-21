@@ -1,2 +1,2 @@
 # XmlComparer
-An application for comparing xml files
+A WPF application for comparing xml files
